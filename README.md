@@ -1,10 +1,10 @@
-# I slightly remade the author's library: https://github.com/deplantis/CPP-string-memory-scanner
-## I didn't like how much RAM it consumed.
+- I slightly remade the author's library: https://github.com/deplantis/CPP-string-memory-scanner 
+- I didn't like how much RAM it consumed.
 
 # How to use
 ```cpp
 std::string stringtofind = "dog"; // the string that need to be founded
-scanner scanscan(6372); // procress id
+scanner scanscan(7777); // procress id
 scanscan.scanstring(stringtofind); 
 
 
