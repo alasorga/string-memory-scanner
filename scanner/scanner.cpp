@@ -5,7 +5,7 @@
 scanner::scanner(DWORD proccesid)
 {
     GetSystemInfo(&si);
-    flag = true;
+   // flag = true;
     hProcess = OpenProcess(PROCESS_ALL_ACCESS, 0, proccesid);
 }
 
@@ -42,8 +42,8 @@ void scanner::scanstring(std::string stringtofind)
 
                         if (stringtofind == stringbuffer) {
                             addres.push_back(regionStart + begin);
-                            flag = false;
-                            return;
+                            //flag = false;
+                            //return;
                         }
                     }
                 }
@@ -60,33 +60,6 @@ void scanner::scanstring(std::string stringtofind)
 
 
 
-
-
-
-void scanner::cleanstrings()
-{
-    //std::string replacestring = "wblch";
-    //char buffer[7];
-    //for (auto& addresaddres : addres)
-    //{
-
-    //	ZwReadVirtualMemory(hProcess, (LPVOID)addresaddres, &buffer, sizeof(buffer) + 1, 0);
-    //	debug("memory addres:" + addresaddres);
-    //	debug("memory addres readed string: " + std::string(buffer));
-    //	std::cout << std::hex << "addres found: " << " " << addresaddres << "\n";
-
-    //	ZwWriteVirtualMemory(hProcess, (LPVOID)addresaddres, &replacestring.c_str()[0], replacestring.size() + 1, 0); // WRITE.
-    //	ZwReadVirtualMemory(hProcess, (LPVOID)addresaddres, &buffer, sizeof(buffer) + 1, 0);
-    //	std::cout << "memory addres string after writed to it: " << buffer << "\n";
-    //}
-}
-
-void scanner::debug(std::string printthatshit)
-{
-#ifdef debug
-    std::cout << printthatshit << "\n";
-#endif 
-}
 
 std::vector<uintptr_t> scanner::returnaddreses()
 {
